@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CardBox</title>
+    <style>
+    blockquote,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    div,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+.docs-content p.warning:before {
+    background-color: #f66;
+}
+.docs-content p.tip:before, .docs-content p.warning:before {
+    content: "!";
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: Dosis,Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+}
+.docs-content p.warning {
+    border-left-color: #f66;
+}
+.docs-content ol, .docs-content ul {
+    list-style: inherit;
+}
+.docs-content p.tip, .docs-content  p.warning {
+    padding: 12px 24px 12px 20px;
+    margin: 2em 0;
+    border-left: 4px solid;
+    border-left-color: #f66;
+    background-color: #f8f8f8;
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+}
+    body {
+        background: #F5F7FA;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        color: #24292e;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+
+    .header {
+        background: #495060;
+    }
+
+    .header ul {
+        list-style: none;
+        max-width: 1020px;
+        margin: auto;
+        background: #495060;
+        color: white;
+    }
+
+    .header ul li {
+        float: left;
+        margin-left: 20px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .header .nav-logo {
+        float: left;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .ivu-menu-horizontal {
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item,
+    .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-submenu {
+        color: hsla(0, 0%, 100%, .7);
+    }
+
+    .container {
+        padding: 0 20px;
+        max-width: 1020px;
+        margin: auto;
+    }
+
+    .docs-content {
+        padding: 20px 40px;
+        margin: 20px auto;
+        border: 1px solid #eee;
+        background: #fff;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 2px 3px #eee;
+        box-shadow: 0 2px 3px #eee;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .docs-content h1 {
+        font-size: 30px;
+    }
+
+    .docs-content h1,
+    .docs-content h2 {
+        padding-bottom: .3em;
+        border-bottom: 1px solid #eaecef;
+    }
+
+    .docs-content h3 {
+        font-size: 20px;
+    }
+
+    .docs-content a {
+        color: #2d8cf0;
+        text-decoration: none;
+    }
+
+    .docs-content blockquote,
+    .docs-content dl,
+    .docs-content ol,
+    .docs-content p,
+    .docs-content pre,
+    .docs-content table,
+    .docs-content ul {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .docs-content blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: .25em solid #dfe2e5;
+    }
+
+    .docs-content ol,
+    .docs-content ul {
+        padding-left: 2em;
+    }
+
+    a {
+        color: #2d8cf0;
+        background: 0 0;
+        text-decoration: none;
+        outline: 0;
+        cursor: pointer;
+        -webkit-transition: color .2s ease;
+        transition: color .2s ease;
+    }
+    </style>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <div class="header">
+        <ul class="ivu-menu ivu-menu-dark ivu-menu-horizontal">
+            <li class="ivu-menu-submenu">
+                <div class="ivu-menu-submenu-title"><i class="ivu-icon ivu-icon-pound"></i> 我的项目
+                    <i class="ivu-icon ivu-icon-ios-arrow-down ivu-menu-submenu-title-icon"></i></div>
+                <div class="ivu-select-dropdown" style="min-width: 140.797px; transform-origin: center top 0px; display: none;">
+                    <ul class="ivu-menu-drop-list">
+                        <li class="ivu-menu-item"><i class="ivu-icon ivu-icon-person"></i> 个人项目
+                        </li>
+                        <li class="ivu-menu-item"><i class="ivu-icon ivu-icon-person-stalker"></i> 团队项目
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="ivu-menu-item"><i class="ivu-icon ivu-icon-code-working"></i> 工作台
+            </li>
+            <li class="ivu-menu-item"><i class="ivu-icon ivu-icon-ios-speedometer"></i> 数据
+            </li>
+            <li class="ivu-menu-item ivu-menu-item-active ivu-menu-item-selected"><span class="ivu-badge"><i class="ivu-icon ivu-icon-ios-book"></i> 文档
+           <sup class="ivu-badge-dot" style="display: none;"></sup></span></li>
+        </ul>
+
+<div><div class="" style=""><div class="em-header__content" style="position: relative; overflow: hidden;"><div class="em-spots" style=""><span class="decorate" style="background: rgb(0, 135, 231); width: 45px; height: 45px; margin-top: -22.5px; margin-left: -22.5px; top: 84.4032%; left: 5%;"></span><span class="decorate" style="background: rgb(0, 62, 135); width: 33px; height: 33px; margin-top: -16.5px; margin-left: -16.5px; top: 69.6668%; left: 15%;"></span><span class="decorate" style="background: rgb(201, 27, 0); width: 49px; height: 49px; margin-top: -24.5px; margin-left: -24.5px; top: 62.8382%; left: 25%;"></span><span class="decorate" style="background: rgb(57, 38, 115); width: 48px; height: 48px; margin-top: -24px; margin-left: -24px; top: 43.5159%; left: 35%;"></span><span class="decorate" style="background: rgb(233, 34, 36); width: 34px; height: 34px; margin-top: -17px; margin-left: -17px; top: 52.8027%; left: 45%;"></span><span class="decorate" style="background: rgb(0, 135, 231); width: 47px; height: 47px; margin-top: -23.5px; margin-left: -23.5px; top: 45.2789%; left: 55%;"></span><span class="decorate" style="background: rgb(255, 86, 0); width: 23px; height: 23px; margin-top: -11.5px; margin-left: -11.5px; top: 38.6167%; left: 65%;"></span><span class="decorate" style="background: rgb(0, 62, 135); width: 36px; height: 36px; margin-top: -18px; margin-left: -18px; top: 43.774%; left: 75%;"></span><span class="decorate" style="width: 23px; height: 23px; margin-top: -11.5px; margin-left: -11.5px; top: 5.43153%; left: 85%;"></span><span class="decorate" style="width: 52px; height: 52px; margin-top: -26px; margin-left: -26px; top: 9.74461%; left: 95%;"></span></div><div class="em-container"><div class="ivu-row"><div class="logo ivu-col ivu-col-span-1"><i class="ivu-icon ivu-icon-ios-book fade-leave-to"></i></div><div class="em-header__info ivu-col ivu-col-span-16"><span><h2 class="fade-leave-to">文档</h2><p class="fade-leave-to">阅读文档能使你完全掌握 Easy Mock 的使用。</p></span></div><div class="em-header__control ivu-col ivu-col-span-6"></div></div></div><!----></div></div></div>
+    </div>
+    <div class="container">
+<div class="docs-content"><span><undefined class="markdown-body"><h1 class="markdown-heading markdown-toc-heading">Easy Mock</h1> <p>Easy Mock 是一个可视化，并且能快速生成 <strong>模拟数据</strong> 的持久化服务。<br>
+忘掉下面这些实用但麻烦的 Mock 方式吧。在你用了 Easy Mock 之后，你肯定会爱不释手的。另外，如果使用时让你不快乐，那么请一定要记得 <a href="#fan-kui">反馈</a>。</p> <p><strong>常见的 Mock 方式：</strong></p> <ul><li>将模拟数据直接写在代码里</li> <li>利用 JavaScript 拦截请求</li> <li>利用 Charles、 Fiddler 等代理工具拦截请求</li></ul> <h2 class="markdown-heading markdown-toc-heading">快速开始</h2> <h3 id="yan-shi-xiang-mu" class="markdown-heading markdown-toc-heading"><a href="#yan-shi-xiang-mu" aria-hidden="true" class="header-anchor">#</a> 演示项目</h3> <blockquote><p>每个接口旁都有一个小箭头，点击之后会展开并显示该接口的详细信息。</p></blockquote> <p>所有 <strong>新注册</strong> 的用户都会为其创建一个演示项目，如下图所示。这个项目中已经创建了大部分场景下的演示接口，点击接口旁的 <strong>预览按钮</strong> 即可。如果你已经掌握了 Easy Mock 的使用，可以将其删除。</p> <p><img src="https://assets.souche.com/projects/easy-mock/demo.png?d29da310e9de4bc564ce38e8e0019e17" alt="演示项目"></p> <h3 id="ji-chu-yu-fa" class="markdown-heading markdown-toc-heading"><a href="#ji-chu-yu-fa" aria-hidden="true" class="header-anchor">#</a> 基础语法</h3> <blockquote><p>Easy Mock 引入了 <a href="http://mockjs.com">Mock.js</a>，下面只提供部分语法展示。更详尽的用例及文档请参考 Mock.js 官网。</p> <ul><li>支持生成随机的文本、数字、布尔值、日期、邮箱、链接、图片、颜色等</li> <li>支持扩展更多数据类型，支持自定义函数和正则</li></ul></blockquote> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"string|1-10"</span>: <span class="hljs-string">"★"</span>,
+  <span class="hljs-string">"string2|3"</span>: <span class="hljs-string">"★★"</span>,
+  <span class="hljs-string">"number|+1"</span>: <span class="hljs-number">202</span>,
+  <span class="hljs-string">"number2|1-100.1-10"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">"boolean|1"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"regexp"</span>: <span class="hljs-regexp">/[a-z][A-Z][0-9]/</span>,
+  <span class="hljs-string">"absolutePath"</span>: <span class="hljs-string">"@/string @/user/name"</span>,
+  <span class="hljs-string">"user"</span>: {
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"demo"</span>
+  },
+  <span class="hljs-string">"object|2"</span>: {
+    <span class="hljs-string">"310000"</span>: <span class="hljs-string">"上海市"</span>,
+    <span class="hljs-string">"320000"</span>: <span class="hljs-string">"江苏省"</span>
+  },
+  <span class="hljs-string">"array|1"</span>: [ <span class="hljs-string">"AMD"</span> ]
+}
+</code></pre> <p>上面只展示了最基本的语法，如果你不明白为何要这样定义？请阅读 Mock.js 文档。<br>
+下面是生成的随机数据，会随请求发生改变。</p> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"string"</span>: <span class="hljs-string">"★"</span>,
+  <span class="hljs-string">"string2"</span>: <span class="hljs-string">"★★★★★★"</span>,
+  <span class="hljs-string">"number"</span>: <span class="hljs-number">202</span>,
+  <span class="hljs-string">"number2"</span>: <span class="hljs-number">71.73566</span>,
+  <span class="hljs-string">"boolean"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-string">"regexp"</span>: <span class="hljs-string">"qS8"</span>,
+  <span class="hljs-string">"absolutePath"</span>: <span class="hljs-string">"★ demo"</span>,
+  <span class="hljs-string">"user"</span>: {
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"demo"</span>
+  },
+  <span class="hljs-string">"object"</span>: {
+    <span class="hljs-string">"310000"</span>: <span class="hljs-string">"上海市"</span>,
+    <span class="hljs-string">"320000"</span>: <span class="hljs-string">"江苏省"</span>
+  },
+  <span class="hljs-string">"array"</span>: <span class="hljs-string">"AMD"</span>
+}
+</code></pre> <h3 id="shu-ju-zhan-wei-fu" class="markdown-heading markdown-toc-heading"><a href="#shu-ju-zhan-wei-fu" aria-hidden="true" class="header-anchor">#</a> 数据占位符</h3> <p>掌握 <strong>数据占位符</strong> 可以让你的随机数据更真实。</p> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"string|1-2"</span>: <span class="hljs-string">"@string"</span>,
+  <span class="hljs-string">"integer"</span>: <span class="hljs-string">"@integer(10, 30)"</span>,
+  <span class="hljs-string">"float"</span>: <span class="hljs-string">"@float(60, 100, 2, 2)"</span>,
+  <span class="hljs-string">"boolean"</span>: <span class="hljs-string">"@boolean"</span>,
+  <span class="hljs-string">"date"</span>: <span class="hljs-string">"@date(yyyy-MM-dd)"</span>,
+  <span class="hljs-string">"datetime"</span>: <span class="hljs-string">"@datetime"</span>,
+  <span class="hljs-string">"now"</span>: <span class="hljs-string">"@now"</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"@url"</span>,
+  <span class="hljs-string">"email"</span>: <span class="hljs-string">"@email"</span>,
+  <span class="hljs-string">"region"</span>: <span class="hljs-string">"@region"</span>,
+  <span class="hljs-string">"city"</span>: <span class="hljs-string">"@city"</span>,
+  <span class="hljs-string">"province"</span>: <span class="hljs-string">"@province"</span>,
+  <span class="hljs-string">"county"</span>: <span class="hljs-string">"@county"</span>,
+  <span class="hljs-string">"upper"</span>: <span class="hljs-string">"@upper(@title)"</span>,
+  <span class="hljs-string">"guid"</span>: <span class="hljs-string">"@guid"</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"@id"</span>,
+  <span class="hljs-string">"image"</span>: <span class="hljs-string">"@image(200x200)"</span>,
+  <span class="hljs-string">"title"</span>: <span class="hljs-string">"@title"</span>,
+  <span class="hljs-string">"cparagraph"</span>: <span class="hljs-string">"@cparagraph"</span>,
+  <span class="hljs-string">"csentence"</span>: <span class="hljs-string">"@csentence"</span>,
+  <span class="hljs-string">"range"</span>: <span class="hljs-string">"@range(2, 10)"</span>
+}
+</code></pre> <p>上面只展示了些基本的占位符，如果你想了解更多？请阅读 Mock.js 文档。<br>
+下面是生成的随机数据，会随请求发生改变。</p> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"string"</span>: <span class="hljs-string">"&amp;b(V"</span>,
+  <span class="hljs-string">"integer"</span>: <span class="hljs-number">29</span>,
+  <span class="hljs-string">"float"</span>: <span class="hljs-number">65.93</span>,
+  <span class="hljs-string">"boolean"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"date"</span>: <span class="hljs-string">"2013-02-05"</span>,
+  <span class="hljs-string">"datetime"</span>: <span class="hljs-string">"1983-09-13 16:25:29"</span>,
+  <span class="hljs-string">"now"</span>: <span class="hljs-string">"2017-08-12 01:16:03"</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"cid://vqdwk.nc/iqffqrjzqa"</span>,
+  <span class="hljs-string">"email"</span>: <span class="hljs-string">"u.ianef@hcmc.bv"</span>,
+  <span class="hljs-string">"region"</span>: <span class="hljs-string">"华南"</span>,
+  <span class="hljs-string">"city"</span>: <span class="hljs-string">"通化市"</span>,
+  <span class="hljs-string">"province"</span>: <span class="hljs-string">"陕西省"</span>,
+  <span class="hljs-string">"county"</span>: <span class="hljs-string">"嵊州市"</span>,
+  <span class="hljs-string">"upper"</span>: <span class="hljs-string">"DGWVCCRR TLGZN XSFVHZPF TUJ"</span>,
+  <span class="hljs-string">"guid"</span>: <span class="hljs-string">"c09c7F2b-0AEF-B2E8-74ba-E1efC0FecEeA"</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"650000201405028485"</span>,
+  <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://dummyimage.com/200x200"</span>,
+  <span class="hljs-string">"title"</span>: <span class="hljs-string">"Orjac Kwovfiq Axtwjlop Xoggxbxbw"</span>,
+  <span class="hljs-string">"cparagraph"</span>: <span class="hljs-string">"他明林决每别精与界受部因第方。习压直型示多性子主求求际后世。严比加指安思研计被来交达技天段光。全千设步影身据当条查需府有志。斗中维位转展新斯克何类及拉件科引解。主料内被生今法听或见京情准调就品。同六通目自观照干意音期根几形。"</span>,
+  <span class="hljs-string">"csentence"</span>: <span class="hljs-string">"命己结最方心人车据称温增划眼难。"</span>,
+  <span class="hljs-string">"range"</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+}
+</code></pre> <h3 id="chuang-jian-yi-ge-xiang-mu" class="markdown-heading markdown-toc-heading"><a href="#chuang-jian-yi-ge-xiang-mu" aria-hidden="true" class="header-anchor">#</a> 创建一个项目</h3> <p>现在我们要开始创建第一个项目了，准备好了吗？</p> <p><strong>第一步：点击蓝色按钮</strong></p> <blockquote><p>不管你在哪个页面？这个蓝色按钮都会固定在那。</p></blockquote> <table><thead><tr><th style="text-align:center;">参数</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td style="text-align:center;">归属</td> <td style="text-align:center;">如果你是创建团队项目，一定要记得选团队</td></tr> <tr><td style="text-align:center;">项目基础 URL</td> <td style="text-align:center;">没有特殊要求，尽量简短表意。例：/nba</td></tr> <tr><td style="text-align:center;">Swagger Docs API</td> <td style="text-align:center;">如果有，详见 <a href="#swagger">Swagger</a> 一节</td></tr></tbody></table> <p><img src="https://assets.souche.com/projects/easy-mock/create-project.png?d1d851552900ecf5f3d716216e5db288" alt="创建项目/第一步"></p> <p><strong>第二步：点击进入刚刚创建的项目</strong><br> <strong>第三步：点击创建接口</strong></p> <blockquote><p>关于 em.demo.all ，详见 <a href="#yu-fa-ti-shi">语法提示</a> 一节。</p></blockquote> <p>在数据编辑器中，输入 <strong>em.demo.all</strong> 按下回车，神奇的事情发生了。已经基于 Mock.js 语法自动创建好了数据对象，点击创建完成最后一步吧！</p> <p><img src="https://assets.souche.com/projects/easy-mock/create-mock.png?67793d984f7adb814d4c469635019cde" alt="创建项目/第三步"></p> <p><strong>最后一步：预览接口</strong></p> <p>每个接口旁边都会对应很多操作按钮。现在点击红框标注的 <strong>预览按钮</strong>，看看会发生什么事情吧！</p> <p><img src="https://assets.souche.com/projects/easy-mock/preview.png?e58fa794746e92566dc6abfa37e10fcc" alt="创建项目/最后一步"></p> <h2 class="markdown-heading markdown-toc-heading">进阶指南</h2> <p>如果你已经掌握了上面基础部分，那么进阶指南将会使你把 Easy Mock 用到极致。</p> <h3 id="shan-yong-gong-zuo-tai" class="markdown-heading markdown-toc-heading"><a href="#shan-yong-gong-zuo-tai" aria-hidden="true" class="header-anchor">#</a> 善用工作台</h3> <p>一旦项目变多，并且要在各个项目中来回切换的时候，请一定要记得使用工作台。虽然搜索也能解决问题，但还是有很多多余的步骤。更快捷的方式就是点击项目上的 <strong>小星星</strong>，将其加入到工作台中。一旦项目结束记得用 <strong>同样的方式</strong> 将项目移除工作台。</p> <h3 id="swagger" class="markdown-heading markdown-toc-heading"><a href="#swagger" aria-hidden="true" class="header-anchor">#</a> Swagger</h3> <blockquote><p>如果你还不知道 <a href="http://swagger.io">Swagger</a> 是什么？</p></blockquote> <p>效率一直我们关注的问题。Easy Mock 支持基于 Swagger 创建项目，以节省手动创建接口的时间。Swagger 文档更新也能通过更新操作重新生成接口，并且这是智能的，只会对修改过的接口进行更新。</p> <p><strong>基于 Swagger 创建的项目，会有以下几种能力。</strong></p> <ul><li>创建时会匹配状态为 <code>200</code> 的响应数据，生成相应的 Class Model，这样可以节省我们创建实体类的时间。</li> <li>支持查看 <code>请求参数</code> 和 <code>响应参数</code>（前提是 Swagger 文档有定义这些字段）。</li></ul> <p><strong>获取 Swagger Docs API</strong></p> <blockquote><p>进入 <strong>文档首页</strong> 获取文档接口地址</p></blockquote> <p>下面以 Swagger 官方演示项目 <a href="http://petstore.swagger.io/#/api-docs">Petstore</a> 为例。如图所示，红框标注部分就是文档的接口地址，我们只需要在 <code>创建项目</code> 的时候，在 <code>Swagger Docs API</code> 一栏填写上即可。</p> <p><img src="https://assets.souche.com/projects/easy-mock/petstore.png?5eac36e2220f82fa2051c1ac75632ea2" alt="petstore"></p> <p>由于版本问题，也许你会看到这样的文档首页。不要紧，复制如下地址即可。</p> <p><img src="https://assets.souche.com/projects/easy-mock/swagger-home.png?aab16052e93e326afc88149f16d5ffe9" alt="swagger-home"></p> <p>如果不确定接口地址对不对？将地址复制到浏览器上打开，看看内容是否跟以下内容相似（<strong>注意：不同版本，接口内容是不同的，但可以大致判断出</strong>）。</p> <pre data-lang="json"><code v-pre="" class="language-json">{
+  <span class="hljs-attr">"apiVersion"</span>: <span class="hljs-string">"1.0"</span>,
+  <span class="hljs-attr">"swaggerVersion"</span>: <span class="hljs-string">"1.2"</span>,
+  <span class="hljs-attr">"info"</span>: {
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"api list"</span>,
+    <span class="hljs-attr">"termsOfServiceUrl"</span>: <span class="hljs-string">"http://www.example/api-docs"</span>,
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"api"</span>
+  },
+  <span class="hljs-attr">"apis"</span>: [
+    {
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"用户相关"</span>,
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/user"</span>,
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>
+    },
+    {
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"图片相关"</span>,
+      <span class="hljs-attr">"path"</span>: <span class="hljs-string">"imgs"</span>,
+      <span class="hljs-attr">"position"</span>: <span class="hljs-number">0</span>
+    }
+  ]
+}
+</code></pre> <p class="warning">如果创建项目之后没有接口数据，那么该接口文档可能存在一些问题（例如：数据对象交叉引用）。建议阅读下面的 OpenAPI 规范，再修改文档。</p> <p><strong>OpenAPI 规范，感兴趣可以了解下</strong></p> <ul><li><a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/1.2.md">OpenAPI Specification 1.2</a></li> <li><a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md">OpenAPI Specification 2.0</a></li> <li><a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md">OpenAPI Specification 3.0</a></li></ul> <h3 id="api-zi-dong-sheng-cheng" class="markdown-heading markdown-toc-heading"><a href="#api-zi-dong-sheng-cheng" aria-hidden="true" class="header-anchor">#</a> API 自动生成</h3> <p>如果你想进一步提高自己的效率，现在可以通过 <a href="https://github.com/easy-mock/easy-mock-cli">Easy Mock CLI</a> 自动创建诸如 <code>api.js</code> 这样的文件了。</p> <h3 id="xiang-ying-shi-shu-ju" class="markdown-heading markdown-toc-heading"><a href="#xiang-ying-shi-shu-ju" aria-hidden="true" class="header-anchor">#</a> 响应式数据</h3> <blockquote><p>虽然无法做到数据联动，但是借助于 <strong>响应式数据</strong>，也能玩出许多新花样。</p></blockquote> <p>我们可以在 <strong>数据编辑器</strong> 中，为某个属性指定一个 <strong>Function</strong>。在 Function 中，我们提供了 <strong>_req</strong> 对象，这使得我们可以通过请求对象编写逻辑，实现响应式数据，如图所示。</p> <p><img src="https://assets.souche.com/projects/easy-mock/response.png?017d307dd957aba084a10c7dde236006" alt="response"></p> <p>当我们请求这个接口时，数据返回如下。如果我们传入的 <code>name</code> 为 <code>nk</code>，那么 <code>name</code> 将会随机变化。</p> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"default"</span>: <span class="hljs-string">"hah"</span>,
+    <span class="hljs-string">"_req"</span>: {
+      <span class="hljs-string">"method"</span>: <span class="hljs-string">"GET"</span>,
+      <span class="hljs-string">"url"</span>: <span class="hljs-string">"/mock/599e9e962f17da111139eaf9/example/query"</span>,
+      <span class="hljs-string">"header"</span>: {
+        <span class="hljs-string">"connection"</span>: <span class="hljs-string">"keep-alive"</span>,
+        <span class="hljs-string">"accept"</span>: <span class="hljs-string">"application/json, */*"</span>,
+        <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/json"</span>,
+        <span class="hljs-string">"accept-encoding"</span>: <span class="hljs-string">"gzip, deflate"</span>,
+        <span class="hljs-string">"accept-language"</span>: <span class="hljs-string">"zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4,ja;q=0.2"</span>,
+        <span class="hljs-comment">// ...</span>
+      }
+    },
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"nk_Melissa Hernandez"</span>
+  }
+}
+</code></pre> <p><strong>Function 参数说明</strong></p> <table><thead><tr><th style="text-align:center;">对象</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td style="text-align:center;">Mock</td> <td style="text-align:center;">Mock 对象</td></tr> <tr><td style="text-align:center;">_req.url</td> <td style="text-align:center;">获得请求 url 地址</td></tr> <tr><td style="text-align:center;">_req.method</td> <td style="text-align:center;">获取请求方法</td></tr> <tr><td style="text-align:center;">_req.params</td> <td style="text-align:center;">获取 url 参数对象</td></tr> <tr><td style="text-align:center;">_req.querystring</td> <td style="text-align:center;">获取查询参数字符串(url中?后面的部分)，不包含 ?</td></tr> <tr><td style="text-align:center;">_req.query</td> <td style="text-align:center;">将查询参数字符串进行解析并以对象的形式返回，如果没有查询参数字字符串则返回一个空对象</td></tr> <tr><td style="text-align:center;">_req.body</td> <td style="text-align:center;">当 post 请求以 <code>x-www-form-urlencoded</code> 方式提交时，我们可以拿到请求的参数对象</td></tr> <tr><td style="text-align:center;">_req.path</td> <td style="text-align:center;">获取请求路径名</td></tr> <tr><td style="text-align:center;">_req.header</td> <td style="text-align:center;">获取请求头对象</td></tr> <tr><td style="text-align:center;">_req.originalUrl</td> <td style="text-align:center;">获取请求原始地址</td></tr> <tr><td style="text-align:center;">_req.search</td> <td style="text-align:center;">获取查询参数字符串，包含 ?</td></tr> <tr><td style="text-align:center;">_req.host</td> <td style="text-align:center;">获取 host (hostname:port)</td></tr> <tr><td style="text-align:center;">_req.hostname</td> <td style="text-align:center;">获取 hostname</td></tr> <tr><td style="text-align:center;">_req.type</td> <td style="text-align:center;">获取请求 Content-Type，不包含像 "charset" 这样的参数</td></tr> <tr><td style="text-align:center;">_req.protocol</td> <td style="text-align:center;">返回请求协议</td></tr> <tr><td style="text-align:center;">_req.ip</td> <td style="text-align:center;">请求远程地址</td></tr> <tr><td style="text-align:center;">_req.get(field)</td> <td style="text-align:center;">获取请求 header 中对应 field 的值</td></tr> <tr><td style="text-align:center;">_req.cookies(field)</td> <td style="text-align:center;">获取请求 cookies 中对应 field 的值</td></tr></tbody></table> <h3 id="xiang-ying-shi-shu-ju-zhu-yi-shi-xiang" class="markdown-heading markdown-toc-heading"><a href="#xiang-ying-shi-shu-ju-zhu-yi-shi-xiang" aria-hidden="true" class="header-anchor">#</a> 响应式数据注意事项</h3> <blockquote><p>响应式数据提高了数据的可扩展性和灵活性，但同时也带来了一些问题。例如：代码中出现了死循环，这些问题往往都是致命的，因此我们做了一些限制。</p></blockquote> <p>如果生成数据的时间 <strong>超过2s</strong>，系统将会返回一个 <strong>timed out</strong> 的错误信息，此时应该检查代码是否出现了 <strong>异步操作</strong> 或 <strong>死循环</strong>。</p> <p class="warning">另外，无法在函数中使用 <strong>setInterval</strong>、<strong>setTimeout</strong> 等方法进行异步操作。</p> <h3 id="zi-ding-yi-xiang-ying" class="markdown-heading markdown-toc-heading"><a href="#zi-ding-yi-xiang-ying" aria-hidden="true" class="header-anchor">#</a> 自定义响应</h3> <p>当定义的数据结构中包含 _res 字段的时候，会进入一个特殊逻辑，可以给返回的请求添加一些定制信息。</p> <table><thead><tr><th style="text-align:center;">字段</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td style="text-align:center;">status</td> <td style="text-align:center;">可以定制返回的 http status code，默认是 200</td></tr> <tr><td style="text-align:center;">cookies</td> <td style="text-align:center;">可以定制需要设置的 cookie（暂时不支持设置过期时间等）</td></tr> <tr><td style="text-align:center;">headers</td> <td style="text-align:center;">可以定制返回的 response 的 header</td></tr> <tr><td style="text-align:center;">data</td> <td style="text-align:center;">如果有这个字段，会以此数据直接覆盖整个返回的数据，并且此处不支持 mock 的语法（如果 _res.status 的值为 200，则不会覆盖默认定义的 mock 数据）</td></tr></tbody></table> <pre data-lang="js"><code v-pre="" class="language-js">{
+  <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"data"</span>: {
+    <span class="hljs-string">"default"</span>: <span class="hljs-string">"hah"</span>
+  },
+  <span class="hljs-string">"_res"</span>:{
+    <span class="hljs-string">"status"</span>: <span class="hljs-number">400</span>,
+    <span class="hljs-string">"data"</span>: {
+      <span class="hljs-string">"success"</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-string">"cookies"</span>: {
+      <span class="hljs-string">"test"</span>: <span class="hljs-string">"true"</span>
+    },
+    <span class="hljs-string">"headers"</span>: {
+      <span class="hljs-string">"Power"</span>: <span class="hljs-string">"easy-mock"</span>
+    }
+  }
+}
+</code></pre> <p>以此定义为例，当 _res.status 的值为 400 的时候，用户端接收到的响应将会是 _res.data 中定义的数据，并且返回一个 status code 为 400 的响应，响应的 header 中会包含一个叫做 Power 的值，并为浏览器设置一个叫做 test 的 cookie。</p> <p>当你想要返回正常的 mock 数据的时候，修改 _res.status 为 200，或者将整个 _res 删掉即可。</p> <h2 class="markdown-heading markdown-toc-heading">Tips</h2> <p>掌握这部分内容，可进一步提高效率。</p> <h3 id="kuai-jie-jian" class="markdown-heading markdown-toc-heading"><a href="#kuai-jie-jian" aria-hidden="true" class="header-anchor">#</a> 快捷键</h3> <blockquote><p>目前 Safari 不支持。</p></blockquote> <p>现在试试键盘按下 <code>shift</code> + <code>?</code>，不出意外会出现一个快捷键提示框，如果没有可以切换下输入法试试。左侧的快捷键是全局的，不同页面有不同的快捷键，自己去其它页面试试吧。</p> <h3 id="yu-fa-ti-shi" class="markdown-heading markdown-toc-heading"><a href="#yu-fa-ti-shi" aria-hidden="true" class="header-anchor">#</a> 语法提示</h3> <p>现在数据编辑器支持 <strong>语法提示</strong> 了。如果你想获得关于 Mock.js 的语法提示，可以输入 <strong>em.</strong> 即可。<br>
+按照 Mock.js 的分类，分为：</p> <ul><li>em.base</li> <li>em.date</li> <li>em.image</li> <li>em.color</li> <li>em.text</li> <li>em.name</li> <li>em.web</li> <li>em.address</li> <li>em.helper</li> <li>em.miscellaneous</li> <li>em.demo.all</li></ul> <p class="tip">数据编辑器支持按下 <code>shift</code> + <code>f</code> 搜索哦！</p> <h3 id="pi-liang-cao-zuo" class="markdown-heading markdown-toc-heading"><a href="#pi-liang-cao-zuo" aria-hidden="true" class="header-anchor">#</a> 批量操作</h3> <p>目前，<strong>接口删除</strong>、<strong>接口下载</strong> 支持批量操作。只需在接口旁边勾选上，执行相应操作即可。</p> <h3 id="yi-dong-duan-diao-shi" class="markdown-heading markdown-toc-heading"><a href="#yi-dong-duan-diao-shi" aria-hidden="true" class="header-anchor">#</a> 移动端调试</h3> <p>步骤：</p> <ul><li>利用 Charles Fiddler 等代理工具，抓取客户端中包含页面入口的接口</li> <li>在 Easy Mock 上创建一个接口</li> <li>将刚刚抓取的接口数据复制到 <code>数据编辑器</code> 中，修改页面入口为本地的入口然后保存。要用本地 <code>ip</code> 哦，<code>localhost</code> 在手机上是无效的</li> <li>复制接口地址</li> <li>回到代理工具，点击最开始抓取的接口，将其代理成刚刚复制的地址即可</li></ul> <h2 class="markdown-heading markdown-toc-heading">特性</h2> <h3 id="jie-kou-dai-li" class="markdown-heading markdown-toc-heading"><a href="#jie-kou-dai-li" aria-hidden="true" class="header-anchor">#</a> 接口代理</h3> <p>不难发现 <strong>演示项目</strong> 下有一个地址为 <code>/proxy</code> 的接口。在数据编辑器中我们只填写了一个接口地址，预览的时候可以把这个接口的数据代理回来。除此之外，我们向 <code>/proxy</code> 传入的参数（query 和 body）都会被传递过去。<br> <strong>并且</strong>，如果你的代理接口地址为 <code>http://example.com/api/user/:id</code>，mock 接口地址为 <code>/api/user/:id</code>，那么这个 <code>id</code> 也会被正确的解析出来。</p> <p class="warning">注意：接口代理的超时时间为 <strong>10s</strong>。</p> <h3 id="jsonp" class="markdown-heading markdown-toc-heading"><a href="#jsonp" aria-hidden="true" class="header-anchor">#</a> JSONP</h3> <p>为了满足更多的使用场景，Easy Mock 支持 JSONP。不管是什么接口，只需要在请求中加入 <strong>jsonp_param_name</strong> 参数即可。<br>
+一般情况下，<code>JSONP</code> 的参数名多为 <code>callback</code>。但为了满足更多情况，我们通过 <strong>jsonp_param_name</strong> 参数去指定这个参数名。</p> <pre data-lang="js"><code v-pre="" class="language-js"><span class="hljs-comment">// .../account/updSex?jsonp_param_name=callback&amp;callback=success</span>
+</code></pre> <h3 id="xie-tong-bian-ji" class="markdown-heading markdown-toc-heading"><a href="#xie-tong-bian-ji" aria-hidden="true" class="header-anchor">#</a> 协同编辑</h3> <blockquote><p>如果是多人开发，那么你可以邀请小伙伴一起编辑 Mock。</p></blockquote> <p>项目中的成员，皆能 <code>邀请</code> 或 <code>移除</code> 成员。作为被邀请者如果想移除项目，可在编辑项目时将自己移除，保存即可。另外，只有创建者才能删除项目哦！</p> <h3 id="tuan-dui-xiang-mu" class="markdown-heading markdown-toc-heading"><a href="#tuan-dui-xiang-mu" aria-hidden="true" class="header-anchor">#</a> 团队项目</h3> <blockquote><p>为了满足更多场景，Easy Mock 支持团队项目。</p></blockquote> <ul><li><strong>所有用户</strong> 都可以创建、加入团队，并且 <strong>没有条件限制</strong></li> <li><strong>所有用户</strong> 都可以在团队下创建、修改项目，但无法删除项目 <strong>只有创建者能删除</strong></li> <li>虽然个人项目也能通过邀请的方式达到同样的目的，但这种方式会更适合团队协作</li> <li>因为第一条的原因，建议在创建团队时，将团队名取特殊一点</li></ul> <h3 id="restful" class="markdown-heading markdown-toc-heading"><a href="#restful" aria-hidden="true" class="header-anchor">#</a> Restful</h3> <p>如果后端提供 <code>/restful/:id/list</code> 这样或者这样 <code>/restful/{id}/list</code> 的接口地址。别慌，Easy Mock 是支持的。</p> <h2 class="markdown-heading markdown-toc-heading">常见问题</h2> <h3 id="wang-ji-mi-ma" class="markdown-heading markdown-toc-heading"><a href="#wang-ji-mi-ma" aria-hidden="true" class="header-anchor">#</a> 忘记密码</h3> <p>如果你忘记了密码？那么很遗憾的告诉你，目前没有提供找回密码的通道，建议重新创建一个账号。</p> <h3 id="ru-he-ben-di-bu-shu" class="markdown-heading markdown-toc-heading"><a href="#ru-he-ben-di-bu-shu" aria-hidden="true" class="header-anchor">#</a> 如何本地部署</h3> <p>本地部署的相关介绍，请移步 <a href="https://github.com/easy-mock/easy-mock">GitHub</a>。</p> <h3 id="shu-ju-ru-he-lian-dong" class="markdown-heading markdown-toc-heading"><a href="#shu-ju-ru-he-lian-dong" aria-hidden="true" class="header-anchor">#</a> 数据如何联动</h3> <p>无法进行数据联动，但是可以根据 <a href="#xiang-ying-shi-shu-ju">响应式数据</a> 实现一些需求。</p> <h3 id="xiang-ying-shi-shu-ju-fan-hui-yi-chang" class="markdown-heading markdown-toc-heading"><a href="#xiang-ying-shi-shu-ju-fan-hui-yi-chang" aria-hidden="true" class="header-anchor">#</a> 响应式数据返回异常</h3> <p>如果使用了响应式数据，并且接口返回异常，请先根据 <strong>message</strong> 的描述 <strong>检查数据模型</strong> 中可能存在的 <strong>语法错误</strong>。</p> <p class="warning">请确保你已经了解了 <a href="#xiang-ying-shi-shu-ju-zhu-yi-shi-xiang">响应式数据注意事项</a>。</p> <h3 id="jia-ru-tuan-dui-bu-yong-shen-he-ma" class="markdown-heading markdown-toc-heading"><a href="#jia-ru-tuan-dui-bu-yong-shen-he-ma" aria-hidden="true" class="header-anchor">#</a> 加入团队不用审核吗</h3> <p>起初为了使用方便，并没有涉及到这块的支持。所以建议大家在创建团队的时候可以将团队名称取 <strong>特殊</strong> 且 <strong>长一点</strong>。</p> <h3 id="ru-he-ding-yi-can-shu-xiang-ying-zhuang-tai" class="markdown-heading markdown-toc-heading"><a href="#ru-he-ding-yi-can-shu-xiang-ying-zhuang-tai" aria-hidden="true" class="header-anchor">#</a> 如何定义参数/响应状态</h3> <p>目前只有基于 Swagger 创建的项目才会自动创建相关的参数和响应数据定义，无法进行手动添加。</p> <h3 id="mei-you-swagger-wen-dang" class="markdown-heading markdown-toc-heading"><a href="#mei-you-swagger-wen-dang" aria-hidden="true" class="header-anchor">#</a> 没有 Swagger 文档</h3> <p>Easy Mock 并没有强制要求使用 Swagger，所以即使没有 Swagger 我们也能愉快的使用 Easy Mock。如果你真的很想体验用 Swagger 创建项目，那么可以到 <a href="http://editor.swagger.io">Swagger Editor</a> 上写接口文档，然后生成 JSON，再使用 <strong>内网 Swagger 文档</strong> 的解决方案即可。</p> <h3 id="nei-wang-swagger-wen-dang" class="markdown-heading markdown-toc-heading"><a href="#nei-wang-swagger-wen-dang" aria-hidden="true" class="header-anchor">#</a> 内网 Swagger 文档</h3> <p>如果 Swagger 文档只能内网访问，那么外网 Easy Mock 将无法为其创建项目。</p> <p><strong>解决方案</strong></p> <blockquote><p>不适用于 OAS 1.2</p></blockquote> <ul><li>复制文档接口的 JSON 数据，以 <a href="http://petstore.swagger.io/v2/swagger.json">Petstore</a> 为例</li> <li>在 Easy Mock 中新建一个接口，<code>数据编辑器</code> 中粘贴刚刚复制的接口数据（可能有点大）并完成创建</li> <li>复制刚刚创建的接口的 URL</li> <li>创建一个新的项目，<code>Swagger Docs API</code> 文本框填写刚刚复制的 URL</li> <li>填写完其它内容点击创建即可</li></ul> <h2 class="markdown-heading markdown-toc-heading">其它</h2> <h3 id="fan-kui" class="markdown-heading markdown-toc-heading"><a href="#fan-kui" aria-hidden="true" class="header-anchor">#</a> 反馈</h3> <p>扫描以下二维码，有任何问题可以在群内反馈。</p> <p class="qq-qun"><img src="https://assets.souche.com/projects/easy-mock/qq-qun.jpg?09aec29dfea1f9d8aa8132e69cea97c3" alt="Easy Mock 反馈群"></p></undefined><undefined class="markdown-body" style="display:none;"><h2 class="markdown-heading markdown-toc-heading">更新日志</h2> <h3 id="1-4-0" class="markdown-heading markdown-toc-heading"><a href="#1-4-0" aria-hidden="true" class="header-anchor">#</a> 1.4.0</h3> <p><em>2017-12-01</em></p> <p><strong>New Features</strong></p> <ul><li>新增上传接口，<a href="https://github.com/easy-mock/easy-mock/issues/52" target="_blank">#52</a></li> <li>支持配置上传文件的过期时间(天)</li> <li>支持上传 OAS 文档 (JSON/YML)，<a href="https://github.com/easy-mock/easy-mock/issues/70" target="_blank">#70</a> <a href="https://github.com/easy-mock/easy-mock/issues/112" target="_blank">#112</a></li></ul> <h3 id="1-3-6" class="markdown-heading markdown-toc-heading"><a href="#1-3-6" aria-hidden="true" class="header-anchor">#</a> 1.3.6</h3> <p><em>2017-11-24</em></p> <p><strong>New Features</strong></p> <ul><li>支持 OAS 3.0，<a href="https://github.com/easy-mock/easy-mock/issues/6" target="_blank">#6</a> <a href="https://github.com/easy-mock/easy-mock/issues/120" target="_blank">#120</a></li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复因 <code>patch</code> 方式请求导致失败的问题，<a href="https://github.com/easy-mock/easy-mock/issues/121" target="_blank">#121</a></li></ul> <h3 id="1-3-5" class="markdown-heading markdown-toc-heading"><a href="#1-3-5" aria-hidden="true" class="header-anchor">#</a> 1.3.5</h3> <p><em>2017-11-17</em></p> <p><strong>New Features</strong></p> <ul><li>login 页支持显示版权信息</li></ul> <h3 id="1-3-4" class="markdown-heading markdown-toc-heading"><a href="#1-3-4" aria-hidden="true" class="header-anchor">#</a> 1.3.4</h3> <p><em>2017-11-17</em></p> <p><strong>New Features</strong></p> <ul><li>支持配置并显示版权信息</li> <li>支持 <code>Access-Control-Allow-Credentials</code> 配置</li></ul> <h3 id="1-3-3" class="markdown-heading markdown-toc-heading"><a href="#1-3-3" aria-hidden="true" class="header-anchor">#</a> 1.3.3</h3> <p><em>2017-11-06</em></p> <p><strong>Bug Fixes</strong></p> <ul><li>修复因 <code>while (true) {}</code> 引起的崩溃问题，<a href="https://github.com/easy-mock/easy-mock/issues/113" target="_blank">#113</a></li></ul> <h3 id="1-3-2" class="markdown-heading markdown-toc-heading"><a href="#1-3-2" aria-hidden="true" class="header-anchor">#</a> 1.3.2</h3> <p><em>2017-11-02</em></p> <blockquote><p>注意：该版本更新后，之前的请求参数，响应参数等信息会异常显示（再次同步 Swagger 即可解决）。</p></blockquote> <p><strong>New Features</strong></p> <ul><li>版本更新时，文档与更新日志会添加徽标提醒</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复由快捷键引起的无法复制的问题，<a href="https://github.com/easy-mock/easy-mock/issues/32" target="_blank">#32</a></li></ul> <p><strong>Refactorings</strong></p> <ul><li>Swagger 相关代码已迁移至 <a href="https://github.com/easy-mock/swagger-parser-mock">Swagger Parser Mock</a> 模块，<a href="https://github.com/easy-mock/easy-mock/issues/48" target="_blank">#48</a> <a href="https://github.com/easy-mock/easy-mock/issues/71" target="_blank">#71</a> <a href="https://github.com/easy-mock/easy-mock/issues/109" target="_blank">#109</a></li></ul> <h3 id="1-3-1" class="markdown-heading markdown-toc-heading"><a href="#1-3-1" aria-hidden="true" class="header-anchor">#</a> 1.3.1</h3> <p><em>2017-10-17</em></p> <p><strong>Bug Fixes</strong></p> <ul><li>修复全屏编辑导航栏显示的问题，<a href="https://github.com/easy-mock/easy-mock/issues/98" target="_blank">#98</a></li></ul> <h3 id="1-3-0" class="markdown-heading markdown-toc-heading"><a href="#1-3-0" aria-hidden="true" class="header-anchor">#</a> 1.3.0</h3> <p><em>2017-09-28</em></p> <p><strong>New Features</strong></p> <ul><li>支持国际化</li> <li>支持自定义响应配置，<a href="https://github.com/easy-mock/easy-mock/issues/78" target="_blank">#78</a></li> <li>接口列表页新增返回顶部按钮</li> <li>更新日志新增问题锚点</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复 state 单例的问题</li> <li>修复 jwt.secret 配置错误的问题</li> <li>修复由 bcrypt 引起的无法安装的问题</li> <li>修复团队项目下邀请成员导致 500 的问题，<a href="https://github.com/easy-mock/easy-mock/issues/33" target="_blank">#33</a></li> <li>修复邀请成员输入框无法匹配用户名的问题，<a href="https://github.com/easy-mock/easy-mock/issues/45" target="_blank">#45</a></li> <li>修复由 wallpaper 接口引起的 login 页错误的问题，<a href="https://github.com/easy-mock/easy-mock/issues/39" target="_blank">#39</a></li> <li>修复由系统路径造成的通过 swagger 创建接口引发路径错误的问题</li></ul> <h3 id="1-2-3" class="markdown-heading markdown-toc-heading"><a href="#1-2-3" aria-hidden="true" class="header-anchor">#</a> 1.2.3</h3> <p><em>2017-08-31</em></p> <p><strong>Bug Fixes</strong></p> <ul><li>修复接口数据正则表达式失效的问题</li></ul> <p><strong>New Features</strong></p> <ul><li>前端新增 JSON 验证</li></ul> <h3 id="1-2-2" class="markdown-heading markdown-toc-heading"><a href="#1-2-2" aria-hidden="true" class="header-anchor">#</a> 1.2.2</h3> <p><em>2017-08-30</em></p> <p><strong>Refactorings</strong></p> <ul><li>调整 /dashboard 页最近新增用户条数</li> <li>调整 editor 字号为 15px</li> <li>调整接口列表字号</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复无法统计今日接口累积调用的问题</li></ul> <h3 id="1-2-1" class="markdown-heading markdown-toc-heading"><a href="#1-2-1" aria-hidden="true" class="header-anchor">#</a> 1.2.1</h3> <p><em>2017-08-29</em></p> <p><strong>Performance Improvements</strong></p> <ul><li>优化 unsplash 图片宽度</li></ul> <h3 id="1-2-0" class="markdown-heading markdown-toc-heading"><a href="#1-2-0" aria-hidden="true" class="header-anchor">#</a> 1.2.0</h3> <p><em>2017-08-28</em></p> <p><strong>New Features</strong></p> <ul><li>支持 restc 方式的预览</li> <li>新增 <code>/wallpaper</code> 接口</li> <li>代理接口支持 Restful 风格的参数</li> <li>支持按创建者获取项目列表</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复项目成员无法编辑项目和接口的问题</li> <li>修复当项目和接口 url 为 <code>/</code> 时返回 404 的问题</li> <li>修复因数据模型死循环造成内存泄漏的问题</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>优化统计接口，增加缓存策略</li></ul> <p><strong>Refactorings</strong></p> <ul><li>前端整体重构</li> <li>接口 <code>/proxy/cross</code> 调整为 <code>/proxy</code></li></ul> <h3 id="1-1-11" class="markdown-heading markdown-toc-heading"><a href="#1-1-11" aria-hidden="true" class="header-anchor">#</a> 1.1.11</h3> <ul><li>增加 <code>easy-mock-cli</code> 导航</li> <li>支持向数据模型的 Function 中注入 Mock 对象</li> <li>重构接口无某类型数据时隐藏相应 Tab</li> <li>优化文档</li></ul> <h3 id="1-1-10" class="markdown-heading markdown-toc-heading"><a href="#1-1-10" aria-hidden="true" class="header-anchor">#</a> 1.1.10</h3> <p><strong>Bug Fixes</strong></p> <ul><li>由于缺少 <code>definitions</code> 字段导致无法创建接口的问题</li> <li>无法通过 <code>/project/create/:groupId/by_swagger</code> 创建项目的问题</li></ul> <h3 id="1-1-9" class="markdown-heading markdown-toc-heading"><a href="#1-1-9" aria-hidden="true" class="header-anchor">#</a> 1.1.9</h3> <p><strong>Bug Fixes</strong></p> <ul><li>基于 Swagger 创建 Mock 造成栈溢出的问题</li> <li>参数 Model 被重复创建的问题</li></ul> <h3 id="1-1-8" class="markdown-heading markdown-toc-heading"><a href="#1-1-8" aria-hidden="true" class="header-anchor">#</a> 1.1.8</h3> <p><strong>New Features</strong></p> <ul><li>全屏模式编辑下支持 <code>保存</code> <code>格式化</code> 操作</li> <li>静态资源走 CDN</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>基于 Swagger 创建 Mock 造成栈溢出的问题</li> <li>Swagger allOf 属性无法生成完整数据结构的问题</li></ul> <p><strong>Refactorings</strong></p> <ul><li>基于 Swagger 创建 Mock 的实现</li> <li>基于 Swagger 创建 Mock 失败时将返回具体错误信息</li> <li>团队搜索采用绝对匹配</li></ul> <h3 id="1-1-7" class="markdown-heading markdown-toc-heading"><a href="#1-1-7" aria-hidden="true" class="header-anchor">#</a> 1.1.7</h3> <p><strong>New Features</strong></p> <ul><li>添加 _req.params 对象</li></ul> <h3 id="1-1-6" class="markdown-heading markdown-toc-heading"><a href="#1-1-6" aria-hidden="true" class="header-anchor">#</a> 1.1.6</h3> <p><strong>Bug Fixes</strong></p> <ul><li>无法基于 Swagger 2.0 创建的问题</li> <li>当 Mock Url 为 / 时无法访问的问题</li></ul> <h3 id="1-1-5" class="markdown-heading markdown-toc-heading"><a href="#1-1-5" aria-hidden="true" class="header-anchor">#</a> 1.1.5</h3> <p><strong>New Features</strong></p> <ul><li>查看数据使用量</li> <li>在 Swagger Docs API 旁添加文档锚点</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>BaseUrl 不支持2级以上的问题</li> <li>数据模型格式化失败的问题</li> <li>无法基于 Swagger 2.0 创建的问题</li></ul> <p><strong>Refactorings</strong></p> <ul><li>点击按钮退出全屏</li></ul> <h3 id="1-1-4" class="markdown-heading markdown-toc-heading"><a href="#1-1-4" aria-hidden="true" class="header-anchor">#</a> 1.1.4</h3> <p><strong>New Features</strong></p> <ul><li>登录页可取消自动创建用户的流程</li> <li>从统计中跳转进项目</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>不支持花括号分隔符的问题</li> <li>因包版本不同导致无法编译的问题</li> <li>搜索无法统计 Mock 使用量的问题</li></ul> <h3 id="1-1-3" class="markdown-heading markdown-toc-heading"><a href="#1-1-3" aria-hidden="true" class="header-anchor">#</a> 1.1.3</h3> <p><strong>Bug Fixes</strong></p> <ul><li>头像上传没有去掉 <code>URL</code> 前缀的问题</li></ul> <h3 id="1-1-2" class="markdown-heading markdown-toc-heading"><a href="#1-1-2" aria-hidden="true" class="header-anchor">#</a> 1.1.2</h3> <p><strong>New Features</strong></p> <ul><li>支持根据 <code>响应数据</code> 生成 <code>JavaScript Class Model</code></li> <li>支持查看 <code>Mock 排行榜</code></li></ul> <h3 id="1-1-1" class="markdown-heading markdown-toc-heading"><a href="#1-1-1" aria-hidden="true" class="header-anchor">#</a> 1.1.1</h3> <p><strong>Refactorings</strong></p> <ul><li><code>/project/create/:groupId/by_swagger</code> 支持更新操作</li></ul> <h3 id="1-1-0" class="markdown-heading markdown-toc-heading"><a href="#1-1-0" aria-hidden="true" class="header-anchor">#</a> 1.1.0</h3> <p><strong>New Features</strong></p> <ul><li>支持 <code>JSONP</code></li></ul> <p><strong>Bug Fixes</strong></p> <ul><li><code>swagger_url</code> 不支持下划线的问题</li></ul> <h3 id="1-0-0" class="markdown-heading markdown-toc-heading"><a href="#1-0-0" aria-hidden="true" class="header-anchor">#</a> 1.0.0</h3> <p><strong>Bug Fixes</strong></p> <ul><li>无法更新头像的问题</li> <li><code>Element UI</code> 造成的服务端渲异常问题</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Client
+<ul><li>优化体积大小</li></ul></li></ul> <h3 id="1-0-0-rc-9" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-9" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.9</h3> <p><strong>New Features</strong></p> <ul><li>支持在 <code>Mock Handler Function</code> 里获取 <code>Request</code> 对象</li></ul> <h3 id="1-0-0-rc-8" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-8" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.8</h3> <p><strong>Bug Fixes</strong></p> <ul><li>无法更新接口参数的问题</li> <li>无法支持 <code>Swagger 1.2 Model</code> 为数组的问题</li></ul> <h3 id="1-0-0-rc-7" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-7" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.7</h3> <p><strong>New Features</strong></p> <ul><li>支持基于 <code>Swagger 2.0</code> 的创建</li> <li>支持基于 <code>Swagger</code> 创建的参数显示</li> <li>支持全屏编辑数据</li> <li>支持数据预加载</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>无法上传头像的问题</li></ul> <p><strong>Refactorings</strong></p> <ul><li>重构用户身份信息过期的授权方式</li></ul> <h3 id="1-0-0-rc-6" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-6" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.6</h3> <p><strong>Bug Fixes</strong></p> <ul><li>当 <code>Swagger</code> 某接口字段类型异常时无法生成文档的问题</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Server
+<ul><li>基于 <code>Swagger</code> 创建项目方式的实现</li></ul></li> <li>Client
+<ul><li>基于 <code>Swagger</code> 创建项目时，不再支持传递 <code>Cookie</code></li></ul></li></ul> <h3 id="1-0-0-rc-5" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-5" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.5</h3> <p><strong>New Features</strong></p> <ul><li>支持<code>团队管理</code></li> <li>支持<code>团队类型项目</code></li> <li>支持复制团队项目到个人项目</li> <li>以 <code>Swagger</code> 创建团队项目</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>以 <code>/api</code> 开头出现的授权失效问题</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Client
+<ul><li>预览</li> <li>面包屑</li> <li>文档</li></ul></li></ul> <h3 id="1-0-0-rc-4" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-4" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.4</h3> <p><strong>New Features</strong></p> <ul><li>新增通过 <code>Project Ids</code> 获取 Mock 列表</li></ul> <h3 id="1-0-0-rc-3" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-3" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.3</h3> <p><strong>New Features</strong></p> <ul><li>新增工作台</li> <li>新增文档</li> <li>新增 <code>Loading</code> 状态</li> <li>支持 <code>HTTPS</code></li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复因窗口宽度导致元素展示不正确的问题</li> <li>修复 Mock 不支持正则和方法的问题</li> <li>修复更新接口查重不正确的问题</li></ul> <p><strong>Refactorings</strong></p> <ul><li>重构 Swagger 更新逻辑，支持增量覆盖式更新</li> <li>Project Mock 支持批量插入</li> <li>替换字段 <code>id</code> 为 <code>_id</code></li> <li>去掉外键的 <code>_id</code></li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Server
+<ul><li>优化删除接口，支持批量删除</li> <li>添加索引</li></ul></li> <li>Client
+<ul><li>优化布局</li> <li><code>项目</code> 和 <code>Mock</code> 更新后同步本地数据</li></ul></li></ul> <h3 id="1-0-0-rc-2" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-2" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.2</h3> <p><strong>New Features</strong></p> <ul><li>增加 <code>X-Request-Id</code> 响应头</li> <li>接入单点登录，内网允许并且只允许通过单点登录完成授权</li> <li>增加用户注销接口</li> <li>增加分页显示</li> <li>增加数据统计</li> <li>增加数据导出</li></ul> <p><strong>Bug Fixes</strong></p> <ul><li>修复由 ElementUI 引起的 SSR 渲染失败的问题</li> <li>修复 Safari 上的一些 Bug</li></ul> <p><strong>Refactorings</strong></p> <ul><li>Mock Router</li> <li>身份信息持久化</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Server
+<ul><li>优化异常处理</li> <li>优化响应数据结构</li> <li>入参验证</li> <li>错误提示</li> <li><code>token</code> 过期时间变为 <code>7天</code></li> <li>优化头像生成策略</li></ul></li> <li>Client
+<ul><li>配合响应数据结构的优化</li> <li>介绍页头图切换源地址，加快响应速度</li> <li>取消编辑后自动关闭弹窗的特性</li> <li>优化部分页面的元素位置与操作逻辑</li> <li>优化搜索体验</li></ul></li></ul> <h3 id="1-0-0-rc-1" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-1" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.1</h3> <p><strong>New Features</strong></p> <ul><li>支持快速复制以创建新项目</li> <li>新增主页，用于介绍 Easy Mock</li></ul> <p><strong>Performance Improvements</strong></p> <ul><li>Server
+<ul><li>新增代理接口，可实现 <code>get</code> 方式的跨域请求</li> <li><code>token</code> 过期时间变为 <code>2小时</code></li></ul></li> <li>Client
+<ul><li>完善面包屑导航</li> <li>优化登录背景获取方式</li> <li>优化Mock页的创建名称</li> <li>设置请求超时为 <code>25s</code></li> <li>优化编辑页头像显示方式</li> <li>替换头像上传接口</li></ul></li></ul> <h3 id="1-0-0-rc-0" class="markdown-heading markdown-toc-heading"><a href="#1-0-0-rc-0" aria-hidden="true" class="header-anchor">#</a> 1.0.0-rc.0</h3> <p><strong>New Features</strong></p> <ul><li>支持创建以项目为单位的 <code>Mock List</code></li> <li>支持简单的数据模型( 纯 <code>JSON</code> 对象)</li> <li>支持以 <a href="http://mockjs.com/">Mock.js</a> 为基础的数据模型</li> <li>支持结合 <code>Swagger</code> 快速创建 <code>Mock List</code></li> <li>支持接口代理</li> <li>支持快捷键创建 <code>Project</code> 和 <code>Mock</code></li> <li>支持邀请成员，协同编辑</li> <li>支持 <code>Restful</code></li> <li>支持快速复制以创建新接口</li></ul></undefined></span></div>
+    </div>
+</body>
+
+</html>
