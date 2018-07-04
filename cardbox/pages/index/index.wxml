@@ -1,0 +1,21 @@
+<view class="section">
+  <view class="card">
+  Python装饰器
+  Python中的装饰器本质上就是在不改变函数本身的情况下包装一个函数成为另一个函数的语法糖
+  </view>
+  <!-- <view class="article">
+    <view class="title">Python装饰器</view>
+    <view class="content">Python中的装饰器本质上就是在不改变函数本身的情况下包装一个函数成为另一个函数的语法糖</view>
+  </view>
+
+  <view class="article">
+    <view class="title">Git简介</view>
+    <view class="content">Git 是一个分布式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。</view>
+  </view>
+
+  <view class="article">
+    <view class="title">Git安装
+</view>
+    <view class="content">yum install git</view>
+  </view> -->
+</view>

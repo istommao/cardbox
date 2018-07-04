@@ -1,0 +1,32 @@
+{
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/menu/home_fill.png",
+        "iconPath": "images/menu/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/menu/people_fill.png",
+        "iconPath": "images/menu/people.png",
+        "pagePath": "pages/mine/index",
+        "text": "我"
+      }
+    ]
+  },
+  "pages":[
+    "pages/index/index",
+    "pages/mine/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F2F6F9",
+    "navigationBarTitleText": "编程猫",
+    "navigationBarTextStyle":"black"
+  }
+}
